@@ -1,0 +1,411 @@
+<style>
+    .x .top-row {
+
+        margin-bottom: 3rem;
+    }
+
+    /* TEXT */
+    .x .page-header {
+        font-size: 5rem;
+        font-weight: bold;
+        border-bottom: none
+    }
+
+    .x h2 {
+        font-size: 3rem;
+        line-height: 5rem
+    }
+
+    .x .grey-underline {
+        border-bottom: 3px solid rgb(87, 87, 87)
+    }
+
+    .x p {
+        font-size: 1.5rem;
+        padding: 0;
+    }
+
+    .x .price-text {
+        font-weight: bold
+    }
+
+    .x .subtitle {
+        font-size: 2.4rem
+    }
+
+    .x .item-text {
+        margin-bottom: .25rem
+    }
+
+    /* CLEARFIX */
+    .x .clearfix {
+        display: none;
+    }
+
+    /* SHOW HIDE SETUP */
+    #productsArea {
+        display: none;
+    }
+
+    /* BANNER STYLING */
+    .x .top-row {
+        padding: 0 15px;
+    }
+
+    .banner-area {
+        background-color: #f4f4f4;
+    }
+
+    .x .placeholder-image {
+        height: auto;
+        max-width: 15rem;
+    }
+
+    #BannerArea {
+        pointer-events: none;
+        padding-left: 0;
+        padding-right: 0;
+        overflow: hidden
+    }
+
+    .x .img-responsive.slick-slide {
+        padding: 0 2.5rem
+    }
+
+    .x .slick-slide {
+        margin: 0 50px
+    }
+
+    .x .slick-list {
+        margin: 0 -50px
+    }
+
+    .product-slider.slick-initialized.slick-slider {
+        padding: 1rem 0 0;
+        /* height: 130px; */
+    }
+
+    .hand-picked {
+        padding: 1rem 4rem;
+    }
+
+    /* Lower List Tags Styling */
+
+    .x ul {
+        white-space: normal;
+        padding-left: 1.25rem;
+    }
+
+    .x .block-related {
+        height: auto;
+    }
+
+    /* ANIMATION */
+    @-webkit-keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+
+
+    .fadeIn {
+        -webkit-animation-name: fadeIn;
+        animation-name: fadeIn;
+        -webkit-animation-duration: 5s;
+        animation-duration: 5s;
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+        -webkit-animation-delay: 2s;
+        animation-delay: 2s;
+    }
+
+    @-webkit-keyframes fadeInFast {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+
+    @keyframes fadeInFast {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+
+
+    .fadeInFast {
+        -webkit-animation-name: fadeInFast;
+        animation-name: fadeInFast;
+        -webkit-animation-duration: 3s;
+        animation-duration: 3s;
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+        -webkit-animation-delay: 1s;
+        animation-delay: 1s;
+    }
+
+    @-webkit-keyframes bounce {
+
+        from,
+        20%,
+        53%,
+        80%,
+        to {
+            -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+            animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+            -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+        }
+
+        40%,
+        43% {
+            -webkit-animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+            animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+            -webkit-transform: translate3d(0, -30px, 0);
+            transform: translate3d(0, -30px, 0);
+        }
+
+        70% {
+            -webkit-animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+            animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+            -webkit-transform: translate3d(0, -15px, 0);
+            transform: translate3d(0, -15px, 0);
+        }
+
+        90% {
+            -webkit-transform: translate3d(0, -4px, 0);
+            transform: translate3d(0, -4px, 0);
+        }
+    }
+
+    @keyframes bounce {
+
+        from,
+        20%,
+        53%,
+        80%,
+        to {
+            -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+            animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+            -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+        }
+
+        40%,
+        43% {
+            -webkit-animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+            animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+            -webkit-transform: translate3d(0, -30px, 0);
+            transform: translate3d(0, -30px, 0);
+        }
+
+        70% {
+            -webkit-animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+            animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+            -webkit-transform: translate3d(0, -15px, 0);
+            transform: translate3d(0, -15px, 0);
+        }
+
+        90% {
+            -webkit-transform: translate3d(0, -4px, 0);
+            transform: translate3d(0, -4px, 0);
+        }
+    }
+
+    .bounce {
+        -webkit-animation-name: bounce;
+        animation-name: bounce;
+        -webkit-transform-origin: center bottom;
+        transform-origin: center bottom;
+        -webkit-animation-duration: 1s;
+        animation-duration: 1s;
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+        -webkit-animation-delay: 3s;
+        animation-delay: 3s;
+        animation-iteration-count: 1;
+    }
+
+    @keyframes spin {
+        0% {
+            -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+        }
+
+        100% {
+            -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+        }
+    }
+
+    .spin {
+        -webkit-animation-name: spin;
+        animation-name: spin;
+        -webkit-transform-origin: center;
+        transform-origin: center;
+        -webkit-animation-duration: 1s;
+        animation-duration: 1s;
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+    }
+
+
+    @media screen and (max-width: 768px) {
+        .x .clearfix {
+            display: block;
+        }
+    }
+
+    /* SLICK SLIDER ADJUSTMENTS */
+    /* hide before load */
+    .product-slider {
+        display: none
+    }
+
+    @media screen and (max-width: 768px) {
+        .x .top-row {
+            padding: 0;
+        }
+
+        .product-slider.slick-initialized.slick-slider {
+            /* height: 0; */
+        }
+
+        .slick-slider .slick-list {
+            transform: translate3d(40px, 0, 0);
+        }
+
+        .slick-list {
+            overflow: visible
+        }
+    }
+
+    /* DESKTOP/MOBILE ONLY */
+    .x .desktop-only {
+        display: flex;
+    }
+
+    .x .desktop-only-block {
+        display: block;
+    }
+
+    .x .mobile-only {
+        display: none;
+    }
+
+    @media (max-width:767px) {
+        .x .desktop-only {
+            display: none
+        }
+
+        .x .desktop-only-block {
+            display: none
+        }
+
+        .x .mobile-only {
+            display: block
+        }
+
+        .x .subtitle {
+            padding-left: 2rem;
+            padding-right: 2rem;
+            margin-left: -2rem;
+            margin-right: -2rem;
+        }
+
+        /* top space fix */
+        .generic-html-template>.container {
+            padding-top: 0;
+        }
+    }
+</style>
+<div style="color:red;background-color:yellow;">this is in es6 and needs babel'd before deploy</div>
+<div class="x">
+    <div class="row top-row">
+        <div id="BannerArea" class="col-xs-12 text-center banner-area">
+            <img src="https://www.livingspaces.com/globalassets/images/hand_picked_for_you/hand-picked-title.png"
+                alt="hand picked for you" class="img-responsive center-block hand-picked">
+            <p class="desktop-only-block">A curated list for you. Check back regularly to see
+                more of
+                your favorites!</p>
+            <p class="mobile-only">Check back regularly to see more of
+                your favorites!</p>
+            <div class="product-slider">
+                <img src="https://www.livingspaces.com/globalassets/images/hand_picked_for_you/item-bed.jpg"
+                    alt="slick component" class="img-responsive">
+                <img src='https://www.livingspaces.com/globalassets/images/hand_picked_for_you/item-table.jpg'
+                    alt='slick component' class='img-responsive'>
+                <img src='https://www.livingspaces.com/globalassets/images/hand_picked_for_you/item-sectional.jpg'
+                    alt='slick component' class='img-responsive'>
+                <img src='https://www.livingspaces.com/globalassets/images/hand_picked_for_you/item-reclining.jpg'
+                    alt='slick component' class='img-responsive'>
+                <img src='https://www.livingspaces.com/globalassets/images/hand_picked_for_you/item-dining.jpg'
+                    alt='slick component' class='img-responsive'>
+                <img src='https://www.livingspaces.com/globalassets/images/hand_picked_for_you/item-loveseat.jpg'
+                    alt='slick component' class='img-responsive'>
+                <img src='https://www.livingspaces.com/globalassets/images/hand_picked_for_you/item-chest.jpg'
+                    alt='slick component' class='img-responsive'>
+                <img src='https://www.livingspaces.com/globalassets/images/hand_picked_for_you/item-chair.jpg'
+                    alt='slick component' class='img-responsive'>
+                <img src='https://www.livingspaces.com/globalassets/images/hand_picked_for_you/item-diningtable.jpg'
+                    alt='slick component' class='img-responsive'>
+            </div>
+            <img src="https://www.livingspaces.com/globalassets/images/hand_picked_for_you/item-bed.jpg"
+                alt="slick component" class="img-responsive center-block placeholder-image">
+        </div>
+    </div>
+    <div id="loadingSpinner" class="text-center">
+        <h2 class="fadeIn">Curating Items for You</h2>
+        <i class="fa fa-spinner spin" aria-hidden="true"></i>
+    </div>
+    <div id="productsArea">
+        <div class="row">
+            <div class="col-xs-12">
+                <h3 class="subtitle">Related to Items You've Viewed</h3>
+            </div>
+        </div>
+        <div class="row" id="RelatedToItemsYouveViewed">
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <h3 class="subtitle">More Items to Consider</h3>
+            </div>
+        </div>
+        <div class="row" id="MoreItemsToConsider">
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <h3 class="subtitle">Based on Your Recent History</h3>
+            </div>
+        </div>
+        <div class="row" id="BasedOnYourRecentHistory">
+        </div>
+        <h3 class='subtitle' id="RelatedItemsTitle">View more items related to:</h3>
+        <div class="row block-related" id="RelatedLinksContainer">
+            <ul id="RelatedLinks"></ul>
+        </div>
+    </div>
+</div>

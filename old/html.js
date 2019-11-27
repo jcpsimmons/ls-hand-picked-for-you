@@ -1,0 +1,1 @@
+let item = `<div class='col-xs-6 col-md-3'><a href='#'><img class='img-responsive' src='${imageLink}' alt='${altText}'><p class='item-text'>${itemName}</p><p class='price-text'>$${itemPrice}</p></a></div>`;
