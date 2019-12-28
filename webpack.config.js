@@ -1,7 +1,9 @@
 // Imports: Dependencies
 const path = require("path");
-const htmlWebpackPlugin = require("html-webpack-plugin");
-require("babel-register"); // Webpack Configuration
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+var HtmlWebpackInlineSourcePlugin = require("html-webpack-inline-source-plugin");
+require("babel-register"); // Babel conf
+
 const config = {
   // Entry
   entry: "./src/generatorScript.js",
@@ -18,6 +20,11 @@ const config = {
         test: /\.js$/,
         exclude: /node_modules/,
         use: ["babel-loader"]
+      },
+      // HTML files
+      {
+        test: /\.html$/,
+        use: ["html-loader"]
       }
       // CSS Files
       //   {
@@ -25,7 +32,14 @@ const config = {
       //     use: ['style-loader', 'css-loader'],
       //   }
     ]
-  }
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      inlineSource: ".(js|css)$", // embed all javascript and css inline
+      template: "src/layout.html"
+    }),
+    new HtmlWebpackInlineSourcePlugin()
+  ]
 };
 // Exports
 module.exports = config;

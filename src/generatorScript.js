@@ -1,3 +1,5 @@
+import "@babel/polyfill";
+
 const undefinedChecker = query => {
   if (typeof query == "undefined") {
     return false;
@@ -310,7 +312,7 @@ function loadingState(bool) {
 // Holder function for Async success
 async function containerFcn() {
   loadingState(true);
-  x = new Store(utag_data);
+  var x = new Store(utag_data);
   console.log("eligible " + x.eligibility.toString());
   if (x.eligibility) {
     await x.generateRestfulProductsData();
