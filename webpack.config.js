@@ -9,8 +9,8 @@ const config = {
   entry: "./src/generatorScript.js",
   // Output
   output: {
-    path: path.resolve(__dirname, "./build"),
-    filename: "bundle.js"
+    path: path.resolve(__dirname, "./build")
+    // filename: "bundle.js"
   },
   // Loaders
   module: {
